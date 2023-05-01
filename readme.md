@@ -1,5 +1,4 @@
 # Git Flow
-
 1. `git clone`
 2. `git pull`
 3. `git checkout -b new_branch_name`                  -> creates new branch and switches to it
@@ -27,15 +26,14 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;*If you get <span style="color:red">*"ERROR: Cannot connect to the Docker daemon at unix:///var/run/docker.sock."*</span> run:*
 	    &nbsp;&nbsp;&nbsp;&nbsp;`sudo systemctl start docker`
 10. `docker info` -> *if docker info appears without errors, instalation is ok*
+11. `nano ~/.docker/config.json` -> *delete the line with 'credsStore'*
 
 
 # Buld Docker Image
-
 1. `cd path/to/folder/containing/docker file`
 2. `docker build .`
 
 # Run docker container
-
 1. `cd path/to/folder/containing/docker-compose file`
-2. `docker compose-up`<br>
+2. `docker-compose up`<br>
    &nbsp;&nbsp;&nbsp;&nbsp;*to stop the curently running container press `CTRL+C` and run `docker-compose down`*
