@@ -5,11 +5,10 @@
 4. `git add .`
 5. `git commit -m "description of the changes"`     -> commits the changes
 6. `git push origin your_branch_name`               -> push the local branch to the remte repo
-7. `git checkout main`                              -> switch to main branch
-8. `git merge new_branch_name`                      -> merge new_branch with main branch 
-9. `git push`                                       -> push changes to remote repo on main branch 
-10. `git branch -d new_branch_name`                  -> deletes the branch locally
-11. `git push origin --delete new_branch_name`
+7. `gh pr create --title "test pull request" --body "all the details"` / alternatively create pull request manually in github.com -> create pull request
+8. `git checkout main`                              -> switch to main branch
+9. `git branch -d new_branch_name`                  -> deletes local branch
+10. `git push origin --delete new_branch_name`      -> deletes remote branch 
 
 # Install Docker
 1. `sudo apt-get update`
@@ -29,7 +28,7 @@
 11. `nano ~/.docker/config.json` -> *delete the line with 'credsStore'*
 
 
-# Buld Docker Image
+# Build Docker Image
 1. `cd path/to/folder/containing/docker file`
 2. `docker build .`
 
