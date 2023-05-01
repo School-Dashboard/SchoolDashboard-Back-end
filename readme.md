@@ -9,7 +9,8 @@
 7. `git checkout main`                              -> switch to main branch
 8. `git merge new_branch_name`                      -> merge new_branch with main branch 
 9. `git push`                                       -> push changes to remote repo on main branch 
-10. `git branch -d new_branch_name`                  -> deletes the branch
+10. `git branch -d new_branch_name`                  -> deletes the branch locally
+11. `git push origin --delete new_branch_name`
 
 # Install Docker
 1. `sudo apt-get update`
