@@ -1,9 +1,31 @@
 version: "3.9"
 services:
-  web:
+  app:
     build: .
     ports:
       - "8000:8000"
-    command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/code  
+      - .:/code
+    environment:
+      - DB_HOST=db
+      - DB_NAME=SchoolDashboard-DB
+      - DB_USER=default-user
+      - DB_PASS=some-password
+    depends_on:
+      - db
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=SchoolDashboard-DB
+      - POSTGRES_USER=default-user
+      - POSTGRES_PASSWORD=some-password
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
