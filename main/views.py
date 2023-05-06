@@ -7,8 +7,3 @@ from django.template import loader
 def teachers(request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
-
-
-asdas
-asd
-
